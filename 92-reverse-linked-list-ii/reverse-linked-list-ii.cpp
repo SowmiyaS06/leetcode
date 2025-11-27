@@ -22,7 +22,7 @@ public:
     }
     ListNode* reverseBetween(ListNode* head, int left, int right) {
         int count=1;
-        ListNode *start=head,*end,*prev=NULL;
+        ListNode *start=head,*prev=NULL;
         ListNode *curr=head;
         if(left==right) return head;
         while(curr&&count<right){
