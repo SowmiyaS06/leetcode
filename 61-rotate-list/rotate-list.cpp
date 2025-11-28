@@ -22,7 +22,7 @@ public:
         if(k==0) return head;
         int steps = n-k;
         int i=1;
-        ListNode *newTail=head,*newHead;
+        ListNode *newTail=head;
         while(i<steps){
             newTail=newTail->next;
             i++;
