@@ -10,33 +10,18 @@
  */
 class Solution {
 public:
-ListNode* reverseList(ListNode* head) {
-        ListNode *curr=head,*temp,*newHead=NULL;
-        while(curr){
-            temp=curr->next;
-            curr->next=newHead;
-            newHead=curr;
-            curr=temp;
-        }
-        return newHead;
-    }
     bool isPalindrome(ListNode* head) {
-        ListNode *slow=head,*fast=head;
-        while(fast&&fast->next){
-            slow=slow->next;
-            fast=fast->next->next;
+        vector<int> list;
+        while(head){
+            list.push_back(head->val);
+            head=head->next;
         }
-        ListNode *start=(fast ? slow->next : slow);
-        ListNode * rev=reverseList(start);
-        ListNode * left=head;
-        ListNode *right=rev;
-        while(right){
-            if(left->val!=right->val){
-                return false;
-            }
-            left=left->next;
-            right=right->next;
+        int left=0;
+        int right=list.size()-1;
+        while(left<right&&list[left]==list[right]){
+            left++;
+            right--;
         }
-    return true;
+        return (left>=right);
     }
 };
