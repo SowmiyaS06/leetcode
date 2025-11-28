@@ -28,8 +28,8 @@ public:
             i++;
     }
         tail->next=head;
-        newHead=newTail->next;
+        head=newTail->next;
         newTail->next=NULL;
-    return newHead;
+    return head;
     }
 };
