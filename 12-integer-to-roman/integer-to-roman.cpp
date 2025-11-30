@@ -1,19 +1,15 @@
 class Solution {
 public:
+     vector<int> values={1000,900,500,400,100,90,50,40,10,9,5,4,1};
+    vector<string> symbols={"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
     string intToRoman(int num) {
-        vector<pair<string, int>> roman = {
-            {"M", 1000}, {"CM", 900}, {"D", 500}, {"CD", 400},
-            {"C", 100}, {"XC", 90}, {"L", 50}, {"XL", 40},
-            {"X", 10}, {"IX", 9}, {"V", 5}, {"IV", 4}, {"I", 1}
-        };
         string res="";
-        for(int i=0;i<roman.size();i++){
-            while(num>=roman[i].second){
-                res+=roman[i].first;
-                num-=roman[i].second;
+        for(int i=0;i<values.size();i++){
+            while(num>=values[i]){
+                num-=values[i];
+                res+=symbols[i];
             }
         }
         return res;
-        
     }
 };
